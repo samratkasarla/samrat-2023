@@ -1,0 +1,76 @@
+journalctl 
+netstat
+ps 
+ps -aux
+top
+curl ifconfig.me
+
+
+#!/bin/bash
+cat <<EOF > deployment.yml
+this is first line
+this is second line
+EOF
+
+usermod -aG sudo n1
+
+find ./GFG -name sample.txt 
+find ./GFG -name *.txt 
+find ./GFG -name sample.txt -exec rm -i {} \; 
+find ./GFG -empty
+find ./GFG -perm 664
+
+ssh -i /home/ubuntu/cicdutiliko.pem ubuntu@43.201.62.110
+ssh -i /home/ubuntu/cicdutiliko.pem ubuntu@43.201.62.110 sudo docker logs utilko-api --follow
+
+id prometheus
+
+sudo lsof -i -P -n | grep LISTEN
+
+lsof -i -P -n | grep ':3000'
+
+df -h
+
+iptables -A INPUT -p tcp -m tcp --dport 3001 -m state --state NEW -j ACCEPT
+
+ps aux
+ps aux --sort -%cpu
+ps aux --sort -%mem
+ps aux --sort -%mem | head -10
+
+top -o %MEM
+
+head -n 16
+head -n 4 example1.txt
+
+journalctl -xe
+
+sudo find / -type s
+
+cd /etc/init.d
+
+export AWS_ACCESS_KEY_ID=AK************IEVXQ
+
+df
+
+vi
+
+kill
+
+ls
+
+chmod
+
+init
+
+find
+
+ping
+
+wget
+
+grep
+
+nslookup
+
+netsat

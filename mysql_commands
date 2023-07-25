@@ -1,0 +1,10 @@
+mysql -u USER -pPASSWORD -D DATABASE -e "SQL_QUERY"
+mysqldump -u [username] –p[password] [database_name] > [dump_file.sql]
+mysql -u [username] –p[password] [database_name] < [dump_file.sql]
+mysqldump --skip-extended-insert -u root -proot@7896 > milagroqa1.sql
+mysqldump --single-transaction -u root -proot@7896 milagro_live_9oct > milagroqa1.sql
+mysqldump -u root -p --routines mydb > mydb.sql 
+CHANGE MASTER TO MASTER_HOST='43.205.230.34',MASTER_USER='repluser',MASTER_PASSWORD='copy@7896',MASTER_LOG_FILE='mysql-bin.000024',MASTER_LOG_POS=1584560;
+GRANT SELECT ON milagro-db.* TO 'your-mysql-username'@'localhost';
+SHOW VARIABLES LIKE 'max_allowed_packet';
+GRANT INSERT, UPDATE, DELETE ON milagro_appinventiv.* TO 'mil-r'@'%';
