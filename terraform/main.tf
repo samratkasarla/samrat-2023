@@ -97,3 +97,45 @@ So, the entire expression `count = each.key == "manish" ? 1 : 0` means:
 
 In other words, this expression controls the number of instances of the `aws_iam_user` resource that will be created based on the condition. It ensures that the IAM user is created only for "manish" and not for other user names in the `user_names` variable.
 
+################################################
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ec2:DescribeInstances",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::example-bucket/*"
+    }
+  ]
+}    iwant to create inline policy for user manish which is already created in aws, how to do it ?
+
+
+provider "aws" {
+    region = "us-east-1"
+}
+
+resource "aws_iam_user_policy" "manish_inline_policy" {
+    name = "ManishInlinePolicy"
+    user = "manish"
+    policy = jsoncode({
+         Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "ec2:DescribeInstances"
+        Resource = "*"
+      },
+      {
+        Effect   = "Allow"
+        Action   = "s3:GetObject"
+        Resource = "arn:aws:s3:::example-bucket/*"
+      }
+    ]
+    })
+}
