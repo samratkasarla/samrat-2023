@@ -1,0 +1,90 @@
+what is permission boundary  in aws ?
+
+In AWS Identity and Access Management (IAM), a "permission boundary" is an advanced feature that allows you to set the maximum permissions that an IAM entity (user or role) can have. It acts as a policy that limits the permissions granted to the entity, preventing it from exceeding the specified boundaries.
+
+When you attach a permission boundary to an IAM entity, the entity cannot be granted permissions that exceed the permissions defined in the boundary policy. This provides an additional layer of control and security, especially in situations where you want to delegate certain permissions to users or roles while ensuring that they cannot escalate their privileges beyond a certain level.
+
+Key points to understand about permission boundaries:
+
+1. Limiting Permissions: The primary purpose of a permission boundary is to limit the maximum permissions that an IAM entity can have. It does not grant any permissions on its own but serves as a boundary for the permissions that can be assigned to the entity.
+
+2. Boundary Policy: A permission boundary is an IAM policy that you create and manage separately. It is a JSON document that defines the allowed permissions. You can attach the permission boundary policy to an IAM user or role.
+
+3. Use Cases: Permission boundaries are useful in scenarios where you want to restrict the permissions of a user or role even if they are members of IAM groups or have inline policies attached. It is particularly valuable in multi-tenant environments or when you have trust relationships with external accounts.
+
+4. Trust Relationships: When an IAM entity (e.g., a role) is assumed by another entity (e.g., a user or service), the permissions are determined based on the entity's own policies, inline policies, and the policies of the roles that have a trust relationship with it. A permission boundary, if set, limits the permissions granted during this process.
+
+5. IAM Policy Evaluation: IAM permission boundaries are evaluated after all other policies are evaluated, including AWS managed policies, inline policies, and resource-based policies.
+
+6. IAM Permissions vs. Resource-Level Permissions: Permission boundaries apply to IAM permissions (e.g., actions allowed on AWS services) and do not affect resource-level permissions (e.g., S3 bucket policies or IAM resource-based policies). Resource-level permissions take precedence over IAM permissions.
+
+7. Best Practices: Use permission boundaries cautiously and thoughtfully. Define them based on the specific needs of your use case and the principle of least privilege. Regularly review and update the boundaries as requirements change.
+
+Implementing permission boundaries requires careful planning to ensure that they align with your organization's security and access control requirements. When used effectively, permission boundaries add an extra layer of control to your IAM policies, reducing the risk of unintended escalation of privileges.
+
+########################################################################################################
+
+what is inline policy in aws ?
+
+In AWS Identity and Access Management (IAM), an "inline policy" is a type of policy that is directly embedded or attached to an IAM user, group, or role. Unlike managed policies, which are standalone and separate from IAM entities, inline policies are defined and managed directly within the IAM entity itself.
+
+Key characteristics of inline policies:
+
+1. Scope: Inline policies are specific to a single IAM user, group, or role. They cannot be shared or attached to multiple IAM entities.
+
+2. Direct Attachment: Unlike managed policies that are created independently and then attached to IAM entities, inline policies are created and managed directly within the configuration of the IAM entity.
+
+3. Visibility: Since inline policies are defined directly in the IAM entity configuration, they are more visible and easily accessible when viewing the IAM entity's details.
+
+4. Versioning: Inline policies do not support versioning. If you make changes to an inline policy, the changes take effect immediately for the IAM entity it is attached to.
+
+5. Limitations: IAM entities can have a limited number of inline policies attached. For example, an IAM user can have up to 10 inline policies, and an IAM role can have up to 20 inline policies.
+
+Creating an inline policy involves specifying a JSON document that defines the permissions (actions, resources, and conditions) allowed or denied for the IAM entity. You can attach inline policies to IAM users, groups, or roles to grant specific permissions or restrict access to AWS resources.
+
+Example of an inline policy for an IAM user:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ec2:DescribeInstances",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::example-bucket/*"
+    }
+  ]
+}
+```
+
+In the above example, the inline policy allows the IAM user to describe EC2 instances and get objects from the "example-bucket" in Amazon S3.
+
+It's essential to manage inline policies with care, as they are directly tied to a specific IAM entity and can lead to policy sprawl if not managed effectively. For broader reuse and central management of policies, AWS recommends using managed policies that can be shared and attached to multiple IAM entities.
+
+###########################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
