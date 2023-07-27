@@ -1,0 +1,141 @@
+Pod : smallest and the simplest unit of a kubernetes. represents the single instance.
+Node : It is worker machine, where pods are scheduled and run.
+cluster: collection of nodes or worker machine
+control plane: set of componants those manges kubernetes cluster. api server, etcd, controller manager, scheduler
+api server: 
+kubelet: an agent running on ecach node.
+Deployment: A Kubernetes object that defines a desired state for a set of replicas of a pod. Deployments help manage the scaling, updating, and rolling back of application replicas.
+service: for connecting to the pods, load balancing 
+Namespace:
+Configmap:
+secrets:
+
+types of services 
+
+clusterIP
+Nodeport
+loadbalancer
+ExternalNAME
+
+ClusterIP: The default service type in Kubernetes. It exposes the service on a cluster-internal IP address. This means that the service is only accessible from within the cluster and not from outside. ClusterIP is suitable for internal communication between different components of your application.
+
+NodePort: This service type exposes the service on a static port on each node's IP address in the cluster. It allows access to the service from outside the cluster by specifying the node's IP and the NodePort. For example, if the NodePort is set to 30000, the service can be accessed on any node's IP address on port 30000.
+
+LoadBalancer: When using this service type, Kubernetes provisions an external load balancer (if supported by the cloud provider) and configures it to route traffic to the service. The LoadBalancer service is typically used in cloud environments where external load balancers can be automatically created.
+
+ExternalName: This special service type maps the service to an external DNS name rather than to a set of pods. It does not provide any load balancing or proxying but allows you to give a service a name that resolves to an external DNS name. This is useful for integrating with services outside of the Kubernetes cluster.
+
+Here's a brief summary of the four types:
+
+ClusterIP: Internal-only access, suitable for intra-cluster communication.
+NodePort: Allows external access to the service on a static port on each node.
+LoadBalancer: Provides an external IP/hostname and load balances traffic to the service (for cloud providers that support external load balancers).
+ExternalName: Creates a CNAME record that points to an external service outside the cluster.
+
+important kubernetes commands 
+
+Here are some important Kubernetes commands that will help you manage your Kubernetes clusters and applications:
+
+1. **kubectl get**: List resources in the cluster.
+
+   - `kubectl get pods`: List all running pods in the default namespace.
+   - `kubectl get nodes`: List all nodes in the cluster.
+   - `kubectl get deployments`: List all deployments in the default namespace.
+
+2. **kubectl describe**: Get detailed information about a resource.
+
+   - `kubectl describe pod <pod-name>`: Get detailed information about a specific pod.
+   - `kubectl describe node <node-name>`: Get detailed information about a specific node.
+
+3. **kubectl create**: Create resources in the cluster.
+
+   - `kubectl create deployment <deployment-name> --image=<image-name>`: Create a new deployment using the specified container image.
+   - `kubectl create namespace <namespace-name>`: Create a new namespace.
+
+4. **kubectl delete**: Delete resources from the cluster.
+
+   - `kubectl delete pod <pod-name>`: Delete a specific pod.
+   - `kubectl delete deployment <deployment-name>`: Delete a specific deployment.
+
+5. **kubectl apply**: Apply changes to resources defined in a YAML file.
+
+   - `kubectl apply -f <file-name>`: Apply changes defined in the specified YAML file.
+
+6. **kubectl logs**: View the logs of a container in a pod.
+
+   - `kubectl logs <pod-name> <container-name>`: View logs of a specific container in a pod.
+
+7. **kubectl exec**: Execute commands inside a running container in a pod.
+
+   - `kubectl exec -it <pod-name> -- <command>`: Execute an interactive command inside a specific pod.
+
+8. **kubectl port-forward**: Forward local ports to a running pod.
+
+   - `kubectl port-forward <pod-name> <local-port>:<pod-port>`: Forward local port to a specific pod's port.
+
+9. **kubectl get events**: View events in the cluster.
+
+   - `kubectl get events`: View all events happening in the cluster.
+
+10. **kubectl rollout**: Manage rollouts and updates of deployments.
+
+    - `kubectl rollout status deployment <deployment-name>`: Check the status of a deployment rollout.
+    - `kubectl rollout pause deployment <deployment-name>`: Pause a deployment rollout.
+    - `kubectl rollout resume deployment <deployment-name>`: Resume a paused deployment rollout.
+
+11. **kubectl scale**: Scale the number of replicas in a deployment.
+
+    - `kubectl scale deployment <deployment-name> --replicas=<desired-replicas>`: Scale the number of replicas in a deployment.
+
+12. **kubectl label**: Add or remove labels from resources.
+
+    - `kubectl label pods <pod-name> <label-key>=<label-value>`: Add a label to a specific pod.
+
+13. **kubectl get secret**: Manage secrets in the cluster.
+
+    - `kubectl get secret <secret-name>`: Get details of a specific secret.
+
+14. **kubectl apply and kubectl delete with -f**: Use YAML files to apply or delete multiple resources.
+
+    - `kubectl apply -f <file-name>`: Apply resources defined in the YAML file.
+    - `kubectl delete -f <file-name>`: Delete resources defined in the YAML file.
+
+These are some of the essential `kubectl` commands that will help you interact with your Kubernetes clusters and manage resources efficiently.
+
+######################################
+
+kubectl top nodes
+kubectl top pods
+kubectl top pods -n <namespace>
+
+kubectl get nodes 
+kubectl get nodes | wc -l   # this will give the count of nodes in kubernets cluster
+
+##################################################################
+
+what are the ways in which kubenetes can be set up ?
+
+managed kubernetes services : AKS , EKS
+vendor specific distributions: redhat(openshift)
+kind
+codeready containers
+minishift
+installing kubernetes from source code
+kubeadm
+kubernetes with kops
+kubespray
+minikube
+k3s
+MicroK8s
+
+##########################################
+
+kubectl describe node <node-name>
+
+NAME        STATUS   ROLES    AGE     VERSION
+node-1      Ready    master   10d     v1.21.0
+node-2      Ready    <none>   10d     v1.21.0
+node-3      NotReady <none>   10d     v1.21.0
+
+#####################################################
+

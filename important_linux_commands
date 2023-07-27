@@ -95,3 +95,16 @@ sed '3,6d' file.txt # for deleting from range 3 to 6d
 
 sed '/pattern/d' file.txt # for deleting the pattern matching line 
 
+https://www.geeksforgeeks.org/uname-command-in-linux-with-examples/
+
+uname -a  # kernal name, network node hostname, kernal release date, kernal version, machine hardware name, hardware platform, operating system
+uname -s # kernal name 
+uname -n # prints hostname
+uname -r # kernels release date
+uname -v # prints kernel version
+uname -m # prints machine harware name 
+uname -p # prints the type of processor
+uname -o # prints the name of operating system
+
+
+

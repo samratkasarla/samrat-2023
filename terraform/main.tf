@@ -139,3 +139,32 @@ resource "aws_iam_user_policy" "manish_inline_policy" {
     ]
     })
 }
+
+#########################################################
+how to manages terraform versions ?
+
+tfenv   # version manager 
+
+specifying the required version of code 
+
+terraform {
+  required_version = ">= 0.14.7"
+}
+
+terraform {
+  required_version = ">= 0.14, < 0.15"
+}
+
+Upgrade Considerations: Before upgrading Terraform, review the release notes for the new version to understand any potential breaking changes or deprecations that might affect your existing code.
+
+Testing and Validation: Always test your Terraform code with the new version in a non-production environment before applying changes in production. This ensures that your infrastructure code works as expected with the new version.
+
+Version Pinning: In certain cases, you may want to "pin" the Terraform version used by your team or project. This helps ensure consistency across the development and deployment process. You can pin the version in your version control system (e.g., Git) by including the Terraform binary in the repository or by using a tool like "tfenv" to set the version.
+
+
+
+
+
+
+
+
