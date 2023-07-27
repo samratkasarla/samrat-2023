@@ -60,6 +60,7 @@ kill
 ls
 
 chmod
+chmod 600 *
 
 init
 
@@ -74,3 +75,23 @@ grep
 nslookup
 
 netsat
+
+https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/
+
+sed 's/unix/linux/' file.txt   #replace first occurrence
+sed 's/unix/linux/2' file.txt  #replace second occurrence 
+sed 's/unix/linux/3' file.txt  #replaces third occurence
+sed 's/unix/linux/g' file.txt  #replaces all occurences
+sed 's/unix/linux/3g' file.txt  #replaces all occurrences from third 
+sed '3 s/unix/linux/' file.txt  #replaces occurrences in third line only.
+sed 's/unix/linux/p' file.txt   #replced line prints twice but not replaced lines prints only once.
+sed -n 's/unix/linux/p' file.txt #prints only replaced lines 
+sed '1,3 s/unix/linux/' file.txt #replaces as specied range , 1,3 is the range of lines
+
+sed 'nd' file.txt # for deleting nth line
+sed '5d' file.txt # for deleting 5th line 
+sed '$d' file.txt # for deleting last line
+sed '3,6d' file.txt # for deleting from range 3 to 6d
+
+sed '/pattern/d' file.txt # for deleting the pattern matching line 
+
