@@ -1,0 +1,86 @@
+Types of load balancing in nginx 
+
+Sure, here are some examples of how to configure load balancing in Nginx:
+
+**Round Robin**
+
+```
+upstream myapp {
+  server 192.168.1.100:80;
+  server 192.168.1.101:80;
+  server 192.168.1.102:80;
+}
+
+server {
+  listen 80;
+  location / {
+    proxy_pass http://myapp;
+  }
+}
+```
+
+This configuration will distribute requests to the backend servers in a round-robin fashion.
+
+**Least Connections**
+
+```
+upstream myapp {
+  server 192.168.1.100:80 weight=10;
+  server 192.168.1.101:80 weight=20;
+  server 192.168.1.102:80 weight=30;
+}
+
+server {
+  listen 80;
+  location / {
+    proxy_pass http://myapp;
+  }
+}
+```
+
+This configuration will distribute requests to the backend servers based on the number of active connections. The server with the fewest active connections will receive the most requests.
+
+**IP Hash**
+
+```
+upstream myapp {
+  ip_hash;
+  server 192.168.1.100:80;
+  server 192.168.1.101:80;
+  server 192.168.1.102:80;
+}
+
+server {
+  listen 80;
+  location / {
+    proxy_pass http://myapp;
+  }
+}
+```
+
+This configuration will distribute requests to the backend servers based on the client's IP address. This ensures that each client is always sent to the same server, which can be useful for session management.
+
+**Hash**
+
+```
+upstream myapp {
+  hash $request_uri;
+  server 192.168.1.100:80;
+  server 192.168.1.101:80;
+  server 192.168.1.102:80;
+}
+
+server {
+  listen 80;
+  location / {
+    proxy_pass http://myapp;
+  }
+}
+```
+
+This configuration will distribute requests to the backend servers based on a hash of the request URI. This can be useful for distributing requests evenly across a large number of servers.
+
+I hope this helps! Let me know if you have any other questions.
+
+########################################################
+
