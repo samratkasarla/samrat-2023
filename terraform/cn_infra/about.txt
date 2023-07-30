@@ -1,0 +1,12 @@
+u: dev qa
+m:  dev qa1 qa2 qa3
+
+6 instance
+
+packages required the instance: docker, cerbot, nginx, gitlab-runner
+
+instance specification:
+* 8GB RAM
+* 2 vCPU
+* 160 GB SSD
+* Operating System: Ubuntu 18.04.1 LTS

@@ -68,7 +68,22 @@ It's essential to manage inline policies with care, as they are directly tied to
 
 ###########################################################################################
 
+what are the types of volumes in aws ?
+1. general purpose ssd 
+2. provisioned IOPS ssd (io2)
+3. provisioned iops ssd (io2)
+4. throughput optimised hdd 
+5. cold hdd 
+6. magnetic (standard)
 
+#######################################################
+
+what are the types of storages in aws ?
+s3
+EFS
+EBS
+AMAZON FSx
+aws storage gateway 
 
 
 
