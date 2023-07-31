@@ -1,0 +1,29 @@
+kubectl get
+kubectl get events
+kubectl get pods --watch
+
+kubectl create
+kubectl delete
+kubectl describe
+kubectl edit 
+kubectl logs
+kubectl port-forward
+kubectl exec
+kubectl cp
+kubectl rollout
+kubectl scale
+kubectl watch
+kubectl version
+kubectl top
+kubectl set image
+kubectl expose
+kubectl rollout history
+kubectl rollout undo
+kubectl run 
+kubectl apply
+kubectl patch
+
+
+
+
+

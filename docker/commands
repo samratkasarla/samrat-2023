@@ -1,0 +1,39 @@
+docker run
+docker build
+docker ps 
+docker images
+docker stop
+docker rm
+docker rmi
+docker exec 
+docker logs
+docker pull
+docker inspect
+docker volume create
+docker commit 
+docker system prune
+docker stats
+docker cp
+docker attach
+docker export
+docker import
+docker save
+docker load
+docker rename
+docker pause
+docker unpause
+docker top
+docker events
+docker system df
+docker system events
+docker network
+docker update
+
+docker-compose up -d
+docker-compose down
+docker network create my_network
+docker-compose build
+docker-compose logs my-service
+docker-compose stop
+docker-compose restart
+

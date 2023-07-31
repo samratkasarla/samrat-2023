@@ -1,0 +1,19 @@
+important_commands 
+
+1. terraform init
+2. terraform plan
+3. terraform apply
+4. terraform destroy
+5. terraforn validate
+6. terraform fmt
+7. terraform version
+8. terraform workspace
+9. terraform state
+10. terraform console
+11. terraform graph
+12. terraform import
+13. terraform get
+14. terraform refresh
+15. terraform show
+16. terraform taint
+17. terraform untaint

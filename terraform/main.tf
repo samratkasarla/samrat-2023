@@ -161,6 +161,17 @@ Testing and Validation: Always test your Terraform code with the new version in 
 
 Version Pinning: In certain cases, you may want to "pin" the Terraform version used by your team or project. This helps ensure consistency across the development and deployment process. You can pin the version in your version control system (e.g., Git) by including the Terraform binary in the repository or by using a tool like "tfenv" to set the version.
 
+##################################
+ 
+ what is terraform module ?
+
+It is a collection of multiple terraform configuration in a single directory.
+benefits:
+1. reusability
+2. modularity
+3. scalability
+
+you should create modules when you need to use it repeatably to implement on multiple locations.
 
 
 

@@ -2,14 +2,7 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_instance" "example" {
-    name = "qa1"
-    ami = "ami-0b38992422f1e137f"
-    instance_type = "m4.large"
-    tags = {
-        name = "qa1_server"
-    }
-}
+
 
 resource "aws_security_group" "sg-1" {
     name = "sg-1"
@@ -35,3 +28,14 @@ resource "aws_security_group" "sg-1" {
         protocol = "tcp"
     }
 }
+
+resource "aws_instance" "example" {
+    name = "qa1"
+    ami = "ami-0b38992422f1e137f"
+    instance_type = "m4.large"
+    security_groups = [aws_security_groups.sg-1.id]
+    tags = {
+        name = "qa1_server"
+    }
+}
+
