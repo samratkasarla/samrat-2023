@@ -1,10 +1,15 @@
 kubectl get
 kubectl get events
 kubectl get pods --watch
+kubectl get resourcequota -n <namespace_name>
 
 kubectl create
 kubectl delete
+
 kubectl describe
+kubectl describe namespace <namespace_name>
+kubectl describe pods -n <namespace_name>
+
 kubectl edit 
 kubectl logs
 kubectl port-forward
@@ -14,7 +19,11 @@ kubectl rollout
 kubectl scale
 kubectl watch
 kubectl version
+
 kubectl top
+kubectl top pods -n <namespace_name>
+kubectl top nodes 
+
 kubectl set image
 kubectl expose
 kubectl rollout history

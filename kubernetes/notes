@@ -139,3 +139,9 @@ node-3      NotReady <none>   10d     v1.21.0
 
 #####################################################
 
+scaling in kubernets
+
+kubectl autoscale deployment <deployment-name> --min=2 --max=5 --cpu-percent=80
+kubectl scale deployment <deployment-name> --replicas=3
+
+########################################################
