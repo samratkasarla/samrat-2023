@@ -1,0 +1,9 @@
+created the dockerfiles for angular and nodejs project.
+
+project architecture 
+for this create infra using terraform
+VPV, public subnet,internet gateway, route table, EKS cluster, roles for eks and worker nodes, policy attachment to the roles 
+
+I do kuberneets adminisrtration on daily basis for all the environments like dev qa staging and production.
+
+

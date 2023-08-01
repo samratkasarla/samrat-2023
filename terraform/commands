@@ -17,3 +17,6 @@ important_commands
 15. terraform show
 16. terraform taint
 17. terraform untaint
+
+workspaces 
+terraform apply -w dev

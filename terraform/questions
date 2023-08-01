@@ -1,0 +1,8 @@
+
+how different env like dev and qa is managed by terraform ?
+there are three ways 
+1. workspaces 
+2. modules 
+3. git branching 
+-----------------------------------------------------------
+

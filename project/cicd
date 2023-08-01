@@ -1,0 +1,4 @@
+setting up cicd pipeline which includes stages like pull the code to runner , build the docker image with dockerfile,
+testing with sonarqube, deployment on EKS cluster.
+
+Also setup the pipeline for automated lambda test.
