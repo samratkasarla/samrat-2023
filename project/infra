@@ -3,5 +3,14 @@ public_subnet
 igw
 EKS cluster
 
+created the infrastructure using terraform which includes 
+VPC for EKS
+subnets
+Internet gateway and route table
+EKS cluster
+role for EKS cluster
+role for worker nodes 
+policy attachment to roles 
+
 
 

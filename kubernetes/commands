@@ -2,6 +2,7 @@ kubectl get
 kubectl get events
 kubectl get pods --watch
 kubectl get resourcequota -n <namespace_name>
+kubectl get pods -o wide 
 
 kubectl create
 kubectl delete

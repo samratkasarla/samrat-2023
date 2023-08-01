@@ -106,5 +106,64 @@ uname -m # prints machine harware name
 uname -p # prints the type of processor
 uname -o # prints the name of operating system
 
+##################################
+ps 
+ps aux
+ps -ef 
+
+kill PID
+killall process_name
+kill -9 PID 
+
+top
+htop
+
+free 
+
+df 
+df -h 
+
+du
+du -h 
+
+netstat
+netstat -tuln  : show all listening tcp and udp ports 
+
+ifconfig
+
+ip address show
+ip link
+ip route
+
+route -n 
+
+iptables
+
+ufw
+
+useradd
+userdel
+usermod
+
+password
+
+groupadd
+groupdel
+
+su
+
+sudo
+
+crontab 
+
+at 
+
+journalctl
+
+tar
+
+rsync
+
+
 
 
