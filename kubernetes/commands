@@ -33,6 +33,11 @@ kubectl run
 kubectl apply
 kubectl patch
 
+HPA (Horizontal pod Autoscaller)
+kubectl get hpa
+kubectl autoscale deployment my-app --cpu-percent=80 --min=2 --max=10
+
+
 
 
 

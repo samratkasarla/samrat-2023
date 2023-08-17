@@ -1,4 +1,6 @@
 docker run
+docker run --memory 512m my_image:tag  #to set the memory limits to the container
+
 docker build
 docker ps 
 docker images
@@ -12,6 +14,7 @@ docker inspect
 docker volume create
 docker commit 
 docker system prune
+docker system prune -a
 docker stats
 docker cp
 docker attach
@@ -28,6 +31,13 @@ docker system df
 docker system events
 docker network
 docker update
+docker port 
+docker search
+docker diff my_container
+docker history
+docker tag
+docker version
+docker info
 
 docker-compose up -d
 docker-compose down
@@ -36,4 +46,9 @@ docker-compose build
 docker-compose logs my-service
 docker-compose stop
 docker-compose restart
+
+NETWORKING
+
+docker network
+docker inspect
 

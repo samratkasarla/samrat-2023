@@ -5,5 +5,15 @@ for this create infra using terraform
 VPV, public subnet,internet gateway, route table, EKS cluster, roles for eks and worker nodes, policy attachment to the roles 
 
 I do kuberneets adminisrtration on daily basis for all the environments like dev qa staging and production.
+Cluster Management and Maintenance
+Application Deployment and Release
+Infrastructure Provisioning and Scaling
+Monitoring and Alerting
+Logging and Troubleshooting : elastic search
+Resource Optimization: annalyse which namespace is using more Resource and based on that optimize the resource
+
+setting up cicd pipeline which includes stages like pull the code to runner , build the docker image with dockerfile,
+testing with sonarqube, deployment on EKS cluster.
+Also setup the pipeline for automated lambda test.
 
 

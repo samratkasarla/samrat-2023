@@ -85,6 +85,30 @@ EBS
 AMAZON FSx
 aws storage gateway 
 
+################################
+
+what is diff between public subnet and private subnet ?
+
+The main difference between a public subnet and a private subnet in AWS is whether they have direct access to the internet. Public subnets have a direct route to an internet gateway, which allows them to communicate with the internet. Private subnets do not have a direct route to an internet gateway, so they can only communicate with the internet through a NAT gateway or NAT instance.
+
+Here are some examples of when you might use a public subnet:
+
+* For a web server that needs to be accessible from the internet.
+* For a load balancer that distributes traffic to web servers.
+* For a bastion host that allows you to access other resources in your VPC from the internet.
+
+Here are some examples of when you might use a private subnet:
+
+* For a database that should not be accessible from the internet.
+* For an application server that only needs to communicate with other resources in your VPC.
+* For a file server that should only be accessible to users within your VPC.
+
+####################################################
+
+what is Nat gateway ?
+
+secure way of accessing the instances in private subnet from the internet.
+use to connect private subnet with the internet.
 
 
 

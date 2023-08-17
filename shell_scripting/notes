@@ -1,0 +1,8 @@
+#!/bin/bash
+password=$(cat secret.txt)
+sshpass -p "$password" ssh master@45.12.56.84
+
+########################################################
+
+#
+

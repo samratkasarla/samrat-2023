@@ -179,3 +179,10 @@ you should create modules when you need to use it repeatably to implement on mul
 
 
 
+module "ec2" {
+  source = "./modules/ec2"
+  instance_type = "t2.micro"
+  instance_count = 3
+}
+
+
