@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Enter values:"
+
+while read -r input
+do 
+    echo "Value entered: $input"
+done
+
+echo "End of Input"
+
+###################################
+

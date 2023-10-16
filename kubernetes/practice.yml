@@ -1,0 +1,26 @@
+apiVersion: apps/V1
+kind: Deployment
+metadata:
+spec: 
+    template:
+        metadata:
+        spec:  
+
+.......
+
+service 
+apiVersion: v1
+kind: service 
+metadata: 
+    name: my-database 
+spec: 
+    selector:
+        app: my-app
+        tier: backend 
+    ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+
+.......
+
